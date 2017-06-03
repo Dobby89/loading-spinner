@@ -1,0 +1,12 @@
+/.idea
+/nbproject
+**/*.db
+composer.phar
+composer.lock
+.DS_Store
+.sass-cache/
+Thumbs.db
+ehthumbs.db
+.settings
+node_modules
+bower_components
