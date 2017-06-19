@@ -1,0 +1,21 @@
+{
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --watch --require babel-polyfill --compilers js:babel-register"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "jsdom": "^11.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^3.4.2"
+  },
+  "devDependencies": {}
+}
