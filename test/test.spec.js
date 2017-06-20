@@ -45,8 +45,6 @@ describe('aoSpinner', function () {
                     done();
                 }, 1000);
             });
-
-            it('dispatches an event');
         });
     });
 });
