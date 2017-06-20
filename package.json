@@ -4,18 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --watch --require babel-polyfill --compilers js:babel-register"
+    "test": "mocha --watch --require babel-polyfill --compilers js:babel-register",
+    "start": "npm run scss && npm run bundle",
+    "build": "babel src/scripts -d build/scripts && ",
+    "scss": "node-sass src/styles/style.scss build/styles/style.css",
+    "bundle": "webpack --config webpack.config.js",
+    "bundle.watch": "webpack --config webpack.config.js --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
+    "extend": "^3.0.1",
     "jsdom": "^11.0.0",
     "jsdom-global": "^3.0.2",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "node-sass": "^4.5.3",
+    "webpack": "^3.0.0"
   },
   "devDependencies": {}
 }

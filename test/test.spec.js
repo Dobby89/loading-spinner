@@ -3,7 +3,7 @@ import 'jsdom-global/register'
 var assert = require('assert');
 var expect = require('chai').expect;
 
-import aoSpinner from '../index';
+import aoSpinner from '../src/scripts/index';
 
 describe('Array', function() {
     describe('#indexOf()', function() {
