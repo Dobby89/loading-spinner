@@ -3,7 +3,7 @@ body {
     background: #111;
 }
 
-.loading-container {
+.ao-loader-container {
     position: relative;
     width: 40px;
     height: 40px;
@@ -11,21 +11,21 @@ body {
     text-align: center;
 }
 
-.bounce {
+.ao-loader-bounce {
     animation-duration: 1.2s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     transform: translate3d(0, 0, 0);
-    animation-name: bounce-animation;
+    animation-name: ao-loader-bounce-animation;
     transform-origin: center center;
 }
 
-.bounce svg {
+.ao-loader-bounce .logo {
     display: block;
     margin: auto;
 }
 
-@keyframes bounce-animation {
+@keyframes ao-loader-bounce-animation {
     0%, 20%, 53%, 80%, 90% {
         transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
         transform: translate3d(0, 0, 0);
@@ -44,76 +44,4 @@ body {
     90% {
         transform: translate3d(0, -4px, 0);
     }
-}
-
-/*.progress {*/
-    /*position: absolute;*/
-/*}*/
-
-/*.progress::after {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*left: -35px;*/
-    /*display: block;*/
-    /*width: 20px;*/
-    /*height: 6px;*/
-    /*border-radius: 2px;*/
-    /*background: #7fba23;*/
-
-    /*animation-duration: 2.4s;*/
-    /*animation-fill-mode: both;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-timing-function: linear;*/
-    /*animation-name: horizontal-progress;*/
-    /*transform-origin: center center;*/
-/*}*/
-
-/*@keyframes horizontal-progress {*/
-    /*0%, 100% {*/
-        /*transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);*/
-        /*transform: translate3d(0, 0, 0);*/
-    /*}*/
-
-    /*50% {*/
-        /*transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);*/
-        /*transform: translate3d(90px, 0, 0);*/
-    /*}*/
-/*}*/
-
-/*.orbit {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*left: 17px;*/
-    /*top: 2px;*/
-    /*display: block;*/
-    /*width: 6px;*/
-    /*height: 6px;*/
-    /*border-radius: 50%;*/
-    /*background: #7fba23;*/
-
-    /*animation-duration: 1.2s;*/
-    /*animation-fill-mode: both;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-timing-function: linear;*/
-    /*animation-name: orbit-animation;*/
-    /*transform-origin: center center;*/
-/*}*/
-
-/*@keyframes orbit-animation {*/
-    /*0%, 100% {*/
-        /*transform: rotate(0deg) translate3D(50px, -50px, 0) rotate(0deg);*/
-    /*}*/
-    /*50% {*/
-        /*transform: rotate(180deg) translate3D(50px, -50px, 0) rotate(-180deg);*/
-    /*}*/
-/*}*/
-
-/*@keyframes orbit-animation {*/
-    /*from { transform: rotate(0deg) translate3D(25px, -10px, 0) rotate(0deg); }*/
-    /*to   { transform: rotate(360deg) translate3D(25px, -10px, 0) rotate(-360deg); }*/
-/*}*/
-
-@keyframes orbit-animation {
-    from { transform: rotate(0deg) translate3D(25px, -10px, 0) rotate(0deg); }
-    to   { transform: rotate(360deg) translate3D(25px, -10px, 0) rotate(-360deg); }
 }
