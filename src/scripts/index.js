@@ -1,6 +1,6 @@
 const spinner = function (target, options){
 
-    let el = document.createElement('div');
+    const el = document.createElement('div');
     el.innerHTML = `
     <div class="ao-loader-container" style="font-size: 16px;">
         <div class="ao-loader-inner-container">
@@ -18,11 +18,12 @@ const spinner = function (target, options){
     </div>
     `;
     target.appendChild(el);
+    const progressEl = el.querySelector('.ao-loader-progress');
 
     return {
+        progressEl: progressEl,
         setProgress: function (percent) {
-            const progress = el.querySelector('.ao-loader-progress');
-            progress.innerText = `${percent}%`;
+            progressEl.innerText = `${percent}%`;
         },
         remove: function () {
             target.removeChild(el);
