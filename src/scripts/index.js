@@ -12,13 +12,16 @@ const spinner = function (target, options){
                         <path fill="#7fba23" d="M29.311 17.972l-0.132-0.003-3.51 0.003c-0.523 0-0.958 0.384-1.036 0.886l-0.001 0.005c-0.319 1.812-1.16 3.403-2.529 4.77-1.786 1.786-3.945 2.677-6.487 2.677-2.536 0-4.697-0.891-6.481-2.677-1.376-1.376-2.22-2.976-2.534-4.799-0.090-0.489-0.518-0.861-1.033-0.861l-0.082-0.003-3.557 0.003c-0.579 0-1.050 0.47-1.050 1.049 0 0.031 0.002 0.061 0.004 0.090v0.004c0.394 3.287 1.796 6.139 4.214 8.556 2.887 2.886 6.393 4.328 10.519 4.328 4.129 0 7.637-1.442 10.524-4.328 2.418-2.419 3.824-5.272 4.216-8.56l0.001-0.001c0.002-0.030 0.003-0.060 0.003-0.090 0-0.579-0.469-1.049-1.049-1.049z"></path>
                     </svg>
                 </div>
-                <div class="ao-loader-progress" style="color: #7fba23;">0%</div>
+                <div class="ao-loader-progress" style="color: #7fba23;">
+                    <span class="ao-loader-progress-text">Loading</span>
+                    <span class="ao-loader-progress-percentage">0%</span>
+                </div>
             </div>
         </div>
     </div>
     `;
     target.appendChild(el);
-    const progressEl = el.querySelector('.ao-loader-progress');
+    const progressEl = el.querySelector('.ao-loader-progress-percentage');
 
     return {
         progressEl: progressEl,
