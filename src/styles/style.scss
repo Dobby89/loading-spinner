@@ -24,7 +24,8 @@
     }
 
     &-bounce {
-        height: 33px;
+        display: block;
+        margin: auto;
         animation-duration: 1.2s;
         animation-fill-mode: both;
         animation-iteration-count: infinite;
