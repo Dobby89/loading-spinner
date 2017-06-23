@@ -14,8 +14,8 @@ let loadingInstance = new AoSpinner(loadingEl, {
 });
 loadingInstance.init();
 
-var progress = 0;
-var interval = setInterval(function(){
+let progress = 0;
+let interval = setInterval(function(){
     progress += 1;
     progress = Math.min(progress, 100);
     loadingInstance.setProgress(`Loading ${progress}%`);
