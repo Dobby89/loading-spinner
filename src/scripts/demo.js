@@ -1,16 +1,29 @@
-import aoSpinner from './index';
+import AoSpinner from './index';
 
-const targetElement = document.getElementById('demo-container');
-var aoSpinnerInstance = aoSpinner(targetElement);
+// WITHOUT loading indicator
+const simpleEl = document.getElementById('simple-demo');
+let simpleInstance = new AoSpinner(simpleEl, {
+    loadingText: ''
+});
+simpleInstance.init();
 
-var prog = 0;
+
+// WITH loading indicator and colour
+const loadingEl = document.getElementById('loading-demo');
+let loadingInstance = new AoSpinner(loadingEl, {
+    colour: '#ffffff',
+    loadingText: ''
+});
+loadingInstance.init();
+
+var progress = 0;
 var interval = setInterval(function(){
-    prog += 1;
-    prog = Math.min(prog, 100);
-    aoSpinnerInstance.setProgress(prog);
+    progress += 1;
+    progress = Math.min(progress, 100);
+    loadingInstance.setProgress(`Please wait ${progress}%`);
 
-    if(prog === 100){
+    if(progress === 100){
         clearInterval(interval);
+        loadingInstance.remove();
     }
-}, 200);
-
+}, 50);
