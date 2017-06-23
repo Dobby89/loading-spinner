@@ -3,7 +3,7 @@ class AoSpinner {
         this.target = target;
         this.options = Object.assign({
             colour: '#7fba23',
-            loadingText: 'Loading'
+            loadingText: ''
         }, options);
         this.progressEl;
     }
@@ -22,7 +22,7 @@ class AoSpinner {
                         </svg>
                     </div>
                     <div class="ao-loader-progress" style="color: ${this.options.colour};">
-                        <span class="ao-loader-progress-text">${this.options.loadingText}</span>
+                        <div class="ao-loader-progress-text">${this.options.loadingText}</div>
                     </div>
                 </div>
             </div>

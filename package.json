@@ -8,6 +8,7 @@
     "start": "npm run scss && npm run bundle",
     "build": "babel src/scripts -d build/scripts && ",
     "scss": "node-sass src/styles/style.scss build/styles/style.css",
+    "scss.watch": "node-sass src/styles/style.scss build/styles/style.css --watch",
     "bundle": "webpack --config webpack.config.js",
     "bundle.watch": "webpack --config webpack.config.js --watch"
   },

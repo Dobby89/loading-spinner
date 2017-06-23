@@ -24,6 +24,7 @@
     }
 
     &-bounce {
+        height: 33px;
         animation-duration: 1.2s;
         animation-fill-mode: both;
         animation-iteration-count: infinite;
@@ -31,7 +32,7 @@
         animation-name: ao-loader-bounce-animation;
         transform-origin: center center;
 
-        .logo {
+        &-logo {
             display: block;
             margin: auto;
         }
