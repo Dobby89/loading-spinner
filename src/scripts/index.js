@@ -9,6 +9,8 @@ class AoSpinner {
     }
 
     init() {
+        setContainerPosition(this.target);
+
         this.outerElement = document.createElement('div');
         this.outerElement.innerHTML = `
         <div class="ao-loader-container" style="font-size: 16px;">
@@ -43,6 +45,18 @@ class AoSpinner {
 
     remove() {
         this.target.removeChild(this.outerElement);
+    }
+}
+
+/**
+ * Make sure the containing element has a position
+ * of either relative OR absolute, so the loader can
+ * be positioned in the middle.
+ * @param container
+ */
+function setContainerPosition(container) {
+    if (['relative', 'absolute'].indexOf(getComputedStyle(container)['position']) === -1) {
+        container.style.position = 'relative';
     }
 }
 
