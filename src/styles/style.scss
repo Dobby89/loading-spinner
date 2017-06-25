@@ -29,7 +29,7 @@
         display: block;
         margin: auto;
         transform: translate3d(0, 0, 0);
-        transform-origin: center center;
+        transform-origin: bottom center;
 
         animation-duration: 1.2s;
         animation-fill-mode: both;
@@ -69,21 +69,25 @@
 @keyframes ao-loader-bounce-animation {
     0%, 20%, 53%, 80%, 90% {
         transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0) scale(1);
     }
 
     40%, 43% {
         transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0) scale(0.9, 1);
+    }
+
+    53%, 55% {
+        transform: scale(1, 0.85);
     }
 
     70% {
         transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -13px, 0) scale(1);
     }
 
     90% {
-        transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0) scale(1);
     }
 }
 
