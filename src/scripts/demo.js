@@ -7,7 +7,7 @@ simpleInstance.init();
 
 
 // WITH loading indicator and colour
-const loadingEl = document.getElementById('loading-demo');
+const loadingEl = document.getElementById('progress-demo');
 let loadingInstance = new AoSpinner(loadingEl, {
     colour: '#ffffff',
     loadingText: 'Loading 0%'
