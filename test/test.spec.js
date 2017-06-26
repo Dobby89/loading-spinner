@@ -44,12 +44,6 @@ describe('aoSpinner', function () {
             it('instance has setProgress()', function () {
                 expect(aoSpinnerInstance.setProgress).to.exist;
             });
-
-            it('progress should be 25%', function () {
-                aoSpinnerInstance.setProgress(25);
-
-                expect(aoSpinnerInstance.progressEl.innerText).eql('25%');
-            });
         });
     });
 });
