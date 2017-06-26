@@ -82,12 +82,13 @@
     }
 }
 
+$orbit-start-pos: 60deg;
 @keyframes ao-loader-orbit-animation {
     from {
-        transform: rotate(45deg);
+        transform: rotate($orbit-start-pos);
     }
     to {
-        transform: rotate(405deg);
+        transform: rotate((365 + $orbit-start-pos));
     }
 }
 
