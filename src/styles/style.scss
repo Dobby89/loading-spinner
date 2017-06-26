@@ -88,7 +88,7 @@ $orbit-start-pos: 60deg;
         transform: rotate($orbit-start-pos);
     }
     to {
-        transform: rotate((365 + $orbit-start-pos));
+        transform: rotate((360 + $orbit-start-pos));
     }
 }
 
