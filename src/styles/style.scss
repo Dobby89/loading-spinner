@@ -23,6 +23,22 @@
         vertical-align: middle;
     }
 
+    &-orbit {
+        display: none;
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        top: 50%;
+        height: 90px;
+        width: 90px;
+        margin: -62px 0 0 -53px;
+        color: #8ecf27;
+        border: 8px solid transparent;
+        border-top: 8px solid rgba(127, 186, 35, 0.8);
+        border-radius: 100%;
+        animation: ao-loader-orbit-animation 1.2s infinite linear;
+    }
+
     &-bounce {
         position: relative;
         z-index: 2;
@@ -63,6 +79,15 @@
         color: inherit;
         font-weight: 600;
         font-size: 1em;
+    }
+}
+
+@keyframes ao-loader-orbit-animation {
+    from {
+        transform: rotate(45deg);
+    }
+    to {
+        transform: rotate(405deg);
     }
 }
 
