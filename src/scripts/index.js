@@ -40,7 +40,6 @@ class AoSpinner {
     }
 
     setProgress(text) {
-        console.log(typeof text);
         if (typeof text === 'string' || typeof text === 'number') {
             this.progressEl.innerText = text.toString();
         }
