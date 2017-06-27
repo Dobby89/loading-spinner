@@ -13,6 +13,7 @@ describe('aoSpinner', function () {
         before(function () {
             expect(targetElement.childElementCount).eql(0);
             aoSpinnerInstance = new AoSpinner(targetElement);
+            aoSpinnerInstance.init();
         });
 
         it('attaches to the DOM', function () {
@@ -43,6 +44,11 @@ describe('aoSpinner', function () {
 
             it('instance has setProgress()', function () {
                 expect(aoSpinnerInstance.setProgress).to.exist;
+            });
+
+            it('progress should equal "loading"', function () {
+                aoSpinnerInstance.setProgress('loading');
+                expect(aoSpinnerInstance.progressEl.innerText).to.equal('loading');
             });
         });
     });
