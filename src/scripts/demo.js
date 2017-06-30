@@ -1,24 +1,24 @@
 import AoSpinner from './index';
 
 // WITHOUT loading indicator
-const simpleEl = document.getElementById('simple-demo');
-let simpleInstance = new AoSpinner(simpleEl);
-simpleInstance.init();
+let simpleInstance = new AoSpinner({
+    target: '#simple-demo'
+});
 
 
 // WITH loading indicator and colour
-const loadingEl = document.getElementById('progress-demo');
-let loadingInstance = new AoSpinner(loadingEl, {
-    colour: '#ffffff',
-    loadingText: 'Loading 0%'
+let loadingInstance = new AoSpinner({
+    target: '#progress-demo',
+    colour: '#fff',
+    loadingText: '0%'
 });
-loadingInstance.init();
 
+// Update the progress text
 let progress = 0;
 let interval = setInterval(function(){
     progress += 1;
     progress = Math.min(progress, 100);
-    loadingInstance.setProgress(`Loading ${progress}%`);
+    loadingInstance.updateLoadingText(`Loading ${progress}%`);
 
     if(progress === 100){
         clearInterval(interval);
