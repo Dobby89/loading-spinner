@@ -10,7 +10,7 @@ class AoSpinner {
             target: '.ao-default-loader',
             colour: '#7fba23',
             loadingText: ''
-        }
+        };
         this.currentLoaders = [];
     }
 
@@ -20,8 +20,8 @@ class AoSpinner {
                 case 'colour':
                 case 'target':
                 case 'loadingText':
-                    this.parsedData[attribute] = data[attribute]
-                    break
+                    this.parsedData[attribute] = data[attribute];
+                    break;
                 default:
                     return;
             }
@@ -34,7 +34,6 @@ class AoSpinner {
         let html = `
             <div class="ao-loader-inner-container">
                 <div class="ao-loader-inner">
-                    <div class="ao-loader-orbit"></div>
                     <div class="ao-loader-bounce" style="width: 33px; height: 33px;">
                         <svg class="ao-loader-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                             <path fill="${this.parsedData.colour}" d="M12.262 0.225c-0.88 0-1.566 0.456-2.062 1.264-0.879-0.958-1.979-1.414-3.463-1.414-3.686 0-6.738 3.002-6.738 7.037 0 4.164 3.023 7.015 6.571 7.015 1.486 0 2.751-0.531 3.63-1.514 0.468 0.955 1.1 1.386 2.062 1.386 1.458 0 2.145-0.957 2.145-2.901v-7.996c0-1.941-0.66-2.877-2.145-2.877zM7.228 9.733c-1.512 0-2.739-1.228-2.739-2.741 0-1.515 1.226-2.739 2.739-2.739 1.515 0 2.741 1.225 2.741 2.739-0 1.512-1.226 2.741-2.741 2.741z"></path>
@@ -43,9 +42,7 @@ class AoSpinner {
                         </svg>
                     </div>
                     <div class="ao-loader-shadow"></div>
-                    <div class="ao-loader-progress" style="color: ${this.parsedData.colour};">
-                        <div class="ao-loader-progress-text">${this.parsedData.loadingText}</div>
-                    </div>
+                    <div class="ao-loader-progress" style="color: ${this.parsedData.colour};">${this.parsedData.loadingText}</div>
                 </div>
             </div>
         `;
@@ -54,22 +51,22 @@ class AoSpinner {
     }
 
     updateLoadingText(value) {
-        this.currentLoaders.forEach((element)=>{
-            element.querySelector('.ao-loader-progress-text').innerHTML = value;
+        this.currentLoaders.forEach((element) => {
+            element.querySelector('.ao-loader-progress').innerHTML = value;
         });
     }
 
     init() {
         this.containers = document.querySelectorAll(this.parsedData.target);
-        this.containers.forEach((element)=>{
-            let newElement= this.createDomElement();
+        this.containers.forEach((element) => {
+            let newElement = this.createDomElement();
             this.currentLoaders.push(newElement);
             element.appendChild(newElement);
         });
     }
 
     remove() {
-        this.currentLoaders.forEach((element)=> {
+        this.currentLoaders.forEach((element) => {
             element.parentNode.removeChild(element);
         });
     }
