@@ -3,8 +3,8 @@ import AoSpinner from './index';
 // WITHOUT loading indicator
 let simpleInstance = new AoSpinner({
     target: '#simple-demo',
-    logoWidth: '48px',
-    logoHeight: '48px',
+    logoWidth: '50px',
+    logoHeight: '50px',
     loadingText: 'Testing'
 });
 
