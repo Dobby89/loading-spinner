@@ -2,7 +2,10 @@ import AoSpinner from './index';
 
 // WITHOUT loading indicator
 let simpleInstance = new AoSpinner({
-    target: '#simple-demo'
+    target: '#simple-demo',
+    logoWidth: '48px',
+    logoHeight: '48px',
+    loadingText: 'Testing'
 });
 
 
