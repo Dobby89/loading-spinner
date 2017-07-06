@@ -6,11 +6,9 @@
   "scripts": {
     "test": "mocha --watch --require babel-polyfill --compilers js:babel-register",
     "start": "npm run scss && npm run bundle",
-    "build": "babel src/scripts -d build/scripts && ",
+    "build": "webpack",
     "scss": "node-sass src/styles/style.scss build/styles/style.css",
-    "scss.watch": "node-sass src/styles/style.scss build/styles/style.css --watch",
-    "bundle": "webpack --config webpack.config.js",
-    "bundle.watch": "webpack --config webpack.config.js --watch"
+    "bundle": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",

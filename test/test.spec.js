@@ -7,21 +7,36 @@ import AoSpinner from '../src/scripts/index';
 
 describe('aoSpinner', function () {
     describe('given a node', function () {
-        var targetElement = document.createElement('div');
-        var aoSpinnerInstance;
+        var aoSpinnerInstance, container, loadingEl;
 
         before(function () {
-            expect(targetElement.childElementCount).eql(0);
-            aoSpinnerInstance = new AoSpinner(targetElement);
-            aoSpinnerInstance.init();
-        });
-
-        it('attaches to the DOM', function () {
-            expect(targetElement.childElementCount).eql(1);
+            container = document.createElement('div');
+            container.classList.add('container');
+            expect(container.childElementCount).eql(0);
+            aoSpinnerInstance = new AoSpinner({
+                'target': '.container'
+            });
+            loadingEl = container.querySelector('.ao-loader-progress');
         });
 
         it('instance is defined', function () {
             expect(aoSpinnerInstance).to.exist;
+        });
+
+        it('attaches to the DOM', function () {
+            expect(container.childElementCount).eql(1);
+        });
+
+        describe('updateLoadingText', function () {
+
+            it('instance has updateLoadingText()', function () {
+                expect(aoSpinnerInstance.updateLoadingText).to.exist;
+            });
+
+            it('progress should equal "loading"', function () {
+                aoSpinnerInstance.updateLoadingText('loading');
+                expect(loadingEl.innerText).to.equal('loading');
+            });
         });
 
         describe('remove', function () {
@@ -34,21 +49,9 @@ describe('aoSpinner', function () {
                 aoSpinnerInstance.remove();
 
                 setTimeout(function () {
-                    expect(targetElement.childElementCount).eql(0);
+                    expect(container.childElementCount).eql(0);
                     done();
                 }, 1000);
-            });
-        });
-
-        describe('setProgress', function () {
-
-            it('instance has setProgress()', function () {
-                expect(aoSpinnerInstance.setProgress).to.exist;
-            });
-
-            it('progress should equal "loading"', function () {
-                aoSpinnerInstance.setProgress('loading');
-                expect(aoSpinnerInstance.progressEl.innerText).to.equal('loading');
             });
         });
     });

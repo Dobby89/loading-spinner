@@ -4,8 +4,7 @@ import AoSpinner from './index';
 let simpleInstance = new AoSpinner({
     target: '#simple-demo',
     logoWidth: '50px',
-    logoHeight: '50px',
-    loadingText: 'Testing'
+    logoHeight: '50px'
 });
 
 
