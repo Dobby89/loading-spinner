@@ -12,11 +12,19 @@ describe('aoSpinner', function () {
         before(function () {
             container = document.createElement('div');
             container.classList.add('container');
+            document.body.appendChild(container);
             expect(container.childElementCount).eql(0);
+
             aoSpinnerInstance = new AoSpinner({
-                'target': '.container'
+                'target': '.container',
+                'loadingText': 'Please Wait'
             });
+
             loadingEl = container.querySelector('.ao-loader-progress');
+        });
+
+        after(function () {
+            document.body.removeChild(container);
         });
 
         it('instance is defined', function () {
@@ -27,6 +35,12 @@ describe('aoSpinner', function () {
             expect(container.childElementCount).eql(1);
         });
 
+        describe('loadingText', function () {
+            it('should equal "Please Wait"', function () {
+                expect(loadingEl.textContent).to.be.a('string').that.eqls('Please Wait');
+            });
+        });
+
         describe('updateLoadingText', function () {
 
             it('instance has updateLoadingText()', function () {
@@ -35,7 +49,12 @@ describe('aoSpinner', function () {
 
             it('progress should equal "loading"', function () {
                 aoSpinnerInstance.updateLoadingText('loading');
-                expect(loadingEl.innerText).to.equal('loading');
+                expect(loadingEl.textContent).to.be.a('string').that.eqls('loading');
+            });
+
+            it('progress should equal ""', function () {
+                aoSpinnerInstance.updateLoadingText('');
+                expect(loadingEl.textContent).to.be.a('string').that.is.empty;
             });
         });
 

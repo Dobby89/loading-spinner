@@ -48,6 +48,7 @@ class AoSpinner {
         let element = document.createElement('div');
         element.classList.add(parsedData.classes.container);
 
+        // Based on the existence of loadingText, show/hide the loading text element
         let loadingStyles = parsedData.loadingText ? `color: ${parsedData.colour};` : `display: none; color: ${parsedData.colour};`;
         let loadingTextEl = `<div class="${parsedData.classes.progress}" style="${loadingStyles}">${parsedData.loadingText}</div>`;
 
@@ -75,15 +76,16 @@ class AoSpinner {
     updateLoadingText(value) {
         for (let i = 0; i < this.currentLoaders.length; i++) {
             let element = this.currentLoaders[i];
-            let progressText = element.querySelector(`.${this.parsedData.classes.progress}`);
+            let loadingTextEl = element.querySelector(`.${this.parsedData.classes.progress}`);
 
-            if (value && value !== 'undefined') {
-                progressText.innerHTML = value;
-                progressText.style.display = 'block';
+            loadingTextEl.innerHTML = value;
+
+            if (value && typeof value !== 'undefined') {
+                loadingTextEl.style.display = 'block';
             } else {
-                progressText.style.display = 'none';
+                loadingTextEl.style.display = 'none';
             }
-        };
+        }
     }
 
     init() {
@@ -94,7 +96,7 @@ class AoSpinner {
 
             this.currentLoaders.push(newElement);
             element.appendChild(newElement);
-        };
+        }
     }
 
     remove() {

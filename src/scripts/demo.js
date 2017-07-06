@@ -15,7 +15,7 @@ let loadingInstance = new AoSpinner({
     loadingText: '0%'
 });
 
-// Update the progress text
+// Update the loading progress text
 let progress = 0;
 let interval = setInterval(function(){
     progress += 1;
